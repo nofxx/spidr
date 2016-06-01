@@ -6,6 +6,7 @@ require 'spidr/page'
 require 'spidr/session_cache'
 require 'spidr/cookie_jar'
 require 'spidr/auth_store'
+require 'spidr/sitemap'
 require 'spidr/spidr'
 
 require 'openssl'
@@ -174,6 +175,8 @@ module Spidr
 
       @levels    = Hash.new(0)
       @max_depth = options[:max_depth]
+
+      # if options.fetch(:sitemap,Spidr.sitemap?)
 
       if options.fetch(:robots,Spidr.robots?)
         unless Object.const_defined?(:Robots)

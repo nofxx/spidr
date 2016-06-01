@@ -100,6 +100,30 @@ module Spidr
   end
 
   #
+  # Specifies whether `sitemap.xml` should be honored globally.
+  #
+  # @return [Boolean]
+  #
+  # @since 0.x.0
+  #
+  def Spidr.sitemap?
+    @sitemap
+  end
+
+  #
+  # Enables or disables `sitemap.xml` globally.
+  #
+  # @param [Boolean] mode
+  #
+  # @return [Boolean]
+  #
+  # @since 0.x.0
+  #
+  def Spidr.sitemap=(mode)
+    @sitemap = mode
+  end
+
+  #
   # @see Agent.start_at
   #
   def Spidr.start_at(url,options={},&block)
